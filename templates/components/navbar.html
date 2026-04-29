@@ -1,14 +1,26 @@
-<div class="navbar">
+<nav class="navbar">
     <div class="container nav-content">
 
-        <div></div> <!-- empty left side for balance -->
+        <!-- 1. Left Side (Socials or Placeholder) -->
+        <div class="nav-side"></div>
 
-        <div class="lang-switch">
+        <!-- 2. Middle (Company Name) -->
+        <div class="nav-center">
+            <a href="/" class="logo-text">شركة انماء الخير المتكاملة</a>
+        </div>
+
+        <!-- 3. Right Side (Language Switcher) -->
+        <div class="nav-side">
             <a href="?lang={% if lang == 'ar' %}en{% else %}ar{% endif %}"
-            class="btn btn-primary">
-                {% if lang == 'ar' %}English{% else %}العربية{% endif %}
+               class="lang-toggle-btn {% if lang == 'en' %}is-en{% endif %}">
+                <span class="toggle-track">
+                    <span class="toggle-thumb"></span>
+                </span>
+                <span class="toggle-label">
+                    {% if lang == 'ar' %}EN{% else %}عربي{% endif %}
+                </span>
             </a>
         </div>
 
     </div>
-</div>
+</nav>

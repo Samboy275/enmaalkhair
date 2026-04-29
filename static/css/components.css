@@ -1,13 +1,12 @@
 /* static/css/components.css */
-
-/* Navbar */
+/* Navbar Layout */
 .navbar {
-    background-color: var(--white);
-    border-bottom: 1px solid var(--border-color);
-    padding: 1rem 0;
+    background: var(--white);
+    padding: 0.75rem 0;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 1000;
 }
 
 .nav-content {
@@ -15,6 +14,104 @@
     justify-content: space-between;
     align-items: center;
 }
+
+.nav-side {
+    flex: 1; /* Ensures left and right take equal space, centering the middle */
+    display: flex;
+    justify-content: flex-end;
+}
+
+.nav-side:first-child {
+    justify-content: flex-start;
+}
+
+/* Company Name Middle Style */
+.nav-center {
+    flex: 0; /* Keeps it strictly centered */
+}
+
+.logo-text {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--primary-color);
+    letter-spacing: -0.5px;
+    white-space: nowrap;
+    text-transform: uppercase;
+    position: relative;
+}
+
+/* Language Toggle Switch */
+.lang-toggle-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    background: var(--bg-gray);
+    padding: 4px 12px 4px 6px;
+    border-radius: 50px;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.toggle-track {
+    width: 36px;
+    height: 20px;
+    background: #cbd5e1;
+    border-radius: 20px;
+    position: relative;
+    transition: background 0.3s;
+}
+
+.toggle-thumb {
+    position: absolute;
+    top: 2px;
+    left: 2px; /* Default for Arabic */
+    width: 16px;
+    height: 16px;
+    background: white;
+    border-radius: 50%;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.toggle-label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+/* Interaction States */
+.lang-toggle-btn:hover {
+    border-color: var(--primary-color);
+    background: var(--white);
+}
+
+/* Slide animation for English state */
+.is-en .toggle-track {
+    background: var(--primary-color);
+}
+
+.is-en .toggle-thumb {
+    transform: translateX(16px); /* Moves the thumb right when active */
+}
+
+/* Subtle Hover on Logo */
+.logo-text::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: all 0.3s;
+    transform: translateX(-50%);
+}
+
+.logo-text:hover::after {
+    width: 100%;
+}
+
 
 /* Standard Buttons */
 .btn {
