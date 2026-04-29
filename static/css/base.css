@@ -74,7 +74,7 @@ body.is-loading {
     height: 100vh;
 }
 
-/* Page Pre-loader Overlay */
+/* Page Pre-loader Overlay - FIXED: z-index reduced to 999 (below navbar's 1000), pointer-events disabled */
 .loader-overlay {
     position: fixed;
     top: 0;
@@ -85,15 +85,17 @@ body.is-loading {
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 9999;
+    z-index: 999;
     opacity: 1;
     transition: opacity 0.8s ease-out, visibility 0.8s;
+    pointer-events: none;
 }
 
 /* Fade out class (will be added by JS) */
 .loader-overlay.fade-out {
     opacity: 0;
     visibility: hidden;
+    pointer-events: none;
 }
 
 /* Animations Content Container */
@@ -120,4 +122,20 @@ body.is-loading {
 @keyframes letterDrop {
     0% { transform: translateY(-50px); opacity: 0; }
     100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes titleSlideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes titleGlow {
+    0%, 100% { text-shadow: 0 0 20px rgba(26, 124, 196, 0.3); }
+    50% { text-shadow: 0 0 40px rgba(26, 124, 196, 0.6); }
 }

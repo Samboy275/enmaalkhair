@@ -7,5 +7,5 @@ app_name = 'website'
 
 
 urlpatterns = [
-    path('/', views.homepage, name="home")
+    path('', views.homepage, name="home")
 ]
