@@ -21,23 +21,25 @@ document.addEventListener('DOMContentLoaded', () => {
         // Start the fade-out animations
         loader.classList.add('fade-out');
 
-        // Show the main content smoothly
+        // Show the main content smoothly with a slight delay to let transition work
         if (mainContent) {
+            // Force a reflow to ensure the transition is applied
+            mainContent.offsetHeight;
             mainContent.style.opacity = '1';
         }
 
-        // After loader is faded out, set up the character animation for the main page title
+        // 4. Cleanup after animations complete (1500ms fade transition)
         setTimeout(() => {
             loader.style.display = 'none';
             body.classList.remove('is-loading');
 
-            // NOW split the title for the main page animation
+            // Setup the character animation for the main page title
             setupMainPageTitleAnimation();
-        }, 800);
+        }, 1500);
 
     }, LOADING_DURATION);
 
-    // 4. Function to setup the main page title animation
+    // 5. Function to setup the main page title animation
     function setupMainPageTitleAnimation() {
         // Get the animated company name in the main content
         const mainTitle = document.querySelector('.animated-company-name');
