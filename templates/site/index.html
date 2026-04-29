@@ -1,0 +1,51 @@
+<!-- templates/branding/index.html -->
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}قريباً | انماء الخير{% endblock %}
+
+{% block content %}
+    <!-- Keep the loader overlay we built previously -->
+    <div class="loader-overlay" id="loader">
+        <div class="animation-box">
+            <h1 class="animated-company-name" id="splitting-title">انماءالخير</h1>
+            <p class="loading-countdown">انتظرونا قريباً...</p>
+        </div>
+    </div>
+
+    <!-- Main Reveal: Minimalist "Coming Soon" Layout -->
+    <div class="main-page-reveal" id="main-content" style="opacity: 0; transition: opacity 1.2s ease-in-out;">
+
+        <div class="coming-soon-wrapper">
+            <div class="status-badge">قريباً</div>
+
+            <h1 class="hero-title">نعمل على بناء <br><span>تجربة استثنائية</span></h1>
+
+            <p class="hero-subtitle">
+                نحن في **شركة انماء الخير المتكاملة** نقوم حالياً بتجهيز خدماتنا لنقدم لكم أفضل معايير الجودة في الحلول المتكاملة.
+            </p>
+
+            <div class="info-grid">
+                <div class="info-item">
+                    <span class="icon">📍</span>
+                    <p>المملكة العربية السعودية</p>
+                </div>
+                <a href="https://maps.app.goo.gl/7vHmqvZbZKfQh24f9" target="_blank" class="location-btn">
+                    <span>عرض الموقع على الخريطة</span>
+                    <svg xmlns="[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                    </svg>
+                </a>
+                <div class="info-item">
+                    <span class="icon">✉️</span>
+                    <p>enmaalkhair@gmail.com</p>
+                </div>
+            </div>
+
+            <div class="footer-note">
+                جميع الحقوق محفوظة © 2026 شركة انماء الخير المتكاملة
+            </div>
+        </div>
+
+    </div>
+{% endblock %}
