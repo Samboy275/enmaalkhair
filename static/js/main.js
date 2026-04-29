@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
             body.classList.remove('is-loading');
 
             // Setup the character animation for the main page title
-            setupMainPageTitleAnimation();
+            //setupMainPageTitleAnimation();
         }, 1500);
 
     }, LOADING_DURATION);
