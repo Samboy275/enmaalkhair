@@ -17,3 +17,11 @@ class LegalDocument(models.Model):
     content_ar = RichTextField()
     is_active = models.BooleanField(default=False)
 
+
+    class Meta:
+        verbose_name = "Legal Document"
+        verbose_name_plural = "Legal Documents"
+
+
+    def __str__(self):
+        return f"{self.name}"

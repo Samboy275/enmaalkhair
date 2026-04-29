@@ -61,3 +61,82 @@
     border-radius: 999px;
     font-size: 0.9rem;
 }
+
+
+/* The container that holds the database-delivered HTML */
+.rte-content {
+    direction: rtl;
+    text-align: right;
+    line-height: 1.8;
+    color: var(--text-dark);
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: var(--white);
+}
+
+/* Remove those annoying empty space paragraphs */
+.rte-content p:empty,
+.rte-content p:has(br),
+.rte-content p:contains('&nbsp;') {
+    display: none;
+}
+
+/* Structural Header Styling */
+.rte-content h1,
+.rte-content h2 {
+    color: var(--primary-color);
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    border-right: 4px solid var(--primary-color);
+    padding-right: 15px;
+}
+
+.rte-content h1 {
+    text-align: center !important; /* Force center for the main title */
+    border-right: none;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+}
+
+/* List Styling (Fixes the indenting) */
+.rte-content ul {
+    list-style: none;
+    padding-right: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.rte-content li {
+    margin-bottom: 12px;
+    position: relative;
+}
+
+/* Add a modern bullet point since editors often strip them */
+.rte-content li::before {
+    content: "•";
+    color: var(--primary-color);
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-right: -1em;
+    position: absolute;
+    right: -1.2rem;
+}
+
+/* Modern horizontal rule */
+.rte-content hr {
+    border: 0;
+    border-top: 1px solid var(--border-color);
+    margin: 2.5rem 0;
+}
+
+.footer-image {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
+}
+
+.footer-image img {
+    max-width: 200px;
+    height: auto;
+}

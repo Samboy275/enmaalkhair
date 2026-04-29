@@ -1,14 +1,15 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% block title %}Terms and Conditions{% endblock %}
 
 {% block content %}
-<div class="legal-container">
-
-    <h1>Terms and Conditions</h1>
-
+<div class="container legal-container">
     <div class="legal-content">
-        {{ document.content|safe }}
+        {{ content|safe }}
+    </div>
+
+    <div class="footer-image">
+        <img src="{% static 'images/company-footer.png' %}" alt="Company Footer">
     </div>
 
 </div>
