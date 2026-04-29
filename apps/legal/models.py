@@ -13,6 +13,7 @@ class LegalDocument(models.Model):
 
     name = models.CharField(max_length=50)
     type = models.CharField(max_length=15, choices=TYPE_CHOICES)
-    content = RichTextField()
+    content_en = RichTextField()
+    content_ar = RichTextField()
     is_active = models.BooleanField(default=False)
 

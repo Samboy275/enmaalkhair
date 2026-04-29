@@ -2,11 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from .models import LegalDocument
 
 
-def get_legal_document(doc_type: str):
-    """
-    Centralized retrieval logic for legal documents.
-    Keeps views clean and avoids duplication.
-    """
+def get_doc(doc_type):
     return get_object_or_404(
         LegalDocument,
         type=doc_type,
@@ -15,16 +11,28 @@ def get_legal_document(doc_type: str):
 
 
 def terms(request):
-    document = get_legal_document("terms")
+    document = get_doc("terms")
+
+    lang = request.GET.get("lang", "en")
+
+    content = document.content_en if lang == "en" else document.content_ar
 
     return render(request, "legal/terms.html", {
-        "document": document
+        "document": document,
+        "content": content,
+        "lang": lang,
     })
 
 
 def privacy(request):
-    document = get_legal_document("privacy")
+    document = get_doc("privacy")
+
+    lang = request.GET.get("lang", "en")
+
+    content = document.content_en if lang == "en" else document.content_ar
 
     return render(request, "legal/privacy.html", {
-        "document": document
+        "document": document,
+        "content": content,
+        "lang": lang,
     })
