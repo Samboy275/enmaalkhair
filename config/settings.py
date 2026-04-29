@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     # my apps
     'apps.branding',
     'apps.legal',
+    'apps.website',
 ]
 
 MIDDLEWARE = [

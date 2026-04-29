@@ -2,7 +2,11 @@
     <div class="container nav-content">
 
         <!-- 1. Left Side (Socials or Placeholder) -->
-        <div class="nav-side"></div>
+        <div class="nav-side">
+            <a href="{% url 'legal:terms' %}" class="btn btn-priamry">
+                {% if lang == 'ar' %}الشروط والأحكام{% else %}Terms & Conditions{% endif %}
+            </a>
+        </div>
 
         <!-- 2. Middle (Company Name) -->
         <div class="nav-center">
