@@ -55,3 +55,9 @@
     margin-top: 5rem;
     color: var(--text-muted);
 }
+
+.lang-switch .btn {
+    padding: 0.4rem 1rem;
+    border-radius: 999px;
+    font-size: 0.9rem;
+}
