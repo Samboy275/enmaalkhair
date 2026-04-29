@@ -3,10 +3,10 @@
 .navbar {
     background: var(--white);
     padding: 0.75rem 0;
-    box-shadow: 0 2px 15px rgba(26, 125, 218, 0.384);
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
     position: sticky;
     top: 0;
-    z-index: 1000;
+    z-index: 1001;
 }
 
 .nav-content {
@@ -423,6 +423,47 @@
 }
 
 /* Adjust the info-grid to stack better on mobile */
+@media (max-width: 768px) {
+    .nav-content {
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .nav-side {
+        flex: 0 1 100%;
+        justify-content: center !important;
+    }
+
+    .nav-side:first-child {
+        justify-content: center;
+        order: 2;
+    }
+
+    .nav-center {
+        flex: 0 1 100%;
+        order: 1;
+        text-align: center;
+    }
+
+    .logo-text {
+        font-size: 1.2rem;
+    }
+
+    .lang-toggle-btn {
+        padding: 4px 10px 4px 4px;
+        gap: 6px;
+    }
+
+    .toggle-label {
+        font-size: 0.75rem;
+    }
+
+    .btn {
+        padding: 0.5rem 0.8rem;
+        font-size: 0.85rem;
+    }
+}
+
 @media (max-width: 600px) {
     .info-grid {
         flex-direction: column;
@@ -431,5 +472,31 @@
 
     .animated-company-name {
         font-size: 2rem;
+    }
+
+    .nav-content {
+        padding: 0.5rem 0;
+    }
+
+    .logo-text {
+        font-size: 1rem;
+    }
+
+    .lang-toggle-btn {
+        padding: 3px 8px 3px 4px;
+    }
+
+    .toggle-track {
+        width: 30px;
+        height: 18px;
+    }
+
+    .toggle-thumb {
+        width: 14px;
+        height: 14px;
+    }
+
+    .is-en .toggle-thumb {
+        transform: translateX(12px);
     }
 }
