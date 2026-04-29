@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const titleElement = document.getElementById('splitting-title');
 
     // Prevent scrolling while loading
-    body.classList.add('is-loading');
 
     // 2. Simple loading animation (no character splitting in loader)
     // The loader just shows the text with the countdown message
@@ -35,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Setup the character animation for the main page title
             //setupMainPageTitleAnimation();
-        }, 1500);
+        }, 500);
 
     }, LOADING_DURATION);
 
