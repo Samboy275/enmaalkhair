@@ -1,6 +1,6 @@
 from django.db import models
+from ckeditor.fields import RichTextField
 
-# Create your models here.
 # Create your models here.
 
 class LegalDocument(models.Model):
@@ -13,6 +13,6 @@ class LegalDocument(models.Model):
 
     name = models.CharField(max_length=50)
     type = models.CharField(max_length=15, choices=TYPE_CHOICES)
-    text = models.TextField()
+    content = RichTextField()
     is_active = models.BooleanField(default=False)
 

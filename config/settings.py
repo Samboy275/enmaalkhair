@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    # 3rd party apps,
+    'ckeditor',
     # my apps
     'apps.branding',
     'apps.legal',
@@ -65,6 +67,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                # my preprocessors
+                'apps.branding.context_processors.branding',
             ],
         },
     },
